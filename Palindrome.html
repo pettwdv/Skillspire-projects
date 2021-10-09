@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Palindrome Check | Daire Pettway</title>
+    <style> 
+        html { 
+            font-family: Open Sans, Helvetica, Arial, sans-serif;
+            } 
+            
+        body { 
+        background-color: black;
+        width: 50%; 
+        max-width: 800px; 
+        min-width: 480px; 
+        margin: 0 auto; 
+       } 
+       h2 {
+        color: white;
+        text-shadow: 4px 4px blue;
+        transition: text-shadow 0.2s ease-in-out;
+       }
+       h4, label {
+        color: white;
+       }
+      input[type=button], input[type=submit] {
+         border: none;
+         color: black;
+         text-decoration: none;
+         cursor: pointer;
+      }
+
+      .intro{
+        display: flex;           
+       flex-direction: column;   
+       flex-wrap: wrap; 
+       vertical-align: top;
+       position: absolute;
+       margin-top: 20px;
+       padding-top: 60px;
+       width: 75%;
+      } 
+
+    </style> 
+</head>
+<body>
+<div class="container clearfix">
+<div class="row clearfix">
+<!--Intro & Instructions-->
+<div class="col-lg-10 center bottommargin">
+      <div class="intro">
+  <h2> Welcome to Palindrome Check</h2>
+  <h4>Enter any word to find out if it is a Palindrome.</h4>
+  <h4 id="belowInstructions"></h4>
+  <div id="input">
+   
+      <form id="form_id">
+        <label> Enter a word: </label>
+        <input type="text" id="your_input" />
+        <input type = "submit"
+           id = "submitWord"> 
+    </form>
+  </div> 
+</div>
+</div>
+
+<script>
+// instructions
+let text = document.getElementById("belowInstructions");
+
+//function finds out if input is a palindrome
+var isPalindrome = function (string) {
+    if (string == string.split('').reverse().join('')) {
+        /*alert(string + ' is palindrome.');*/
+        text.innerText = string + ' is palindrome.';
+        text.style.color ="green"; 
+    }
+    else {
+        /*alert(string + ' is not palindrome.');*/
+        text.innerText = string + ' is not palindrome.';
+        text.style.color ="red";    
+    }
+}
+
+document.getElementById('form_id').onsubmit = function() {
+   isPalindrome(document.getElementById('your_input').value);
+    return false;
+}
+
+
+</script>
+</body>  
+</html>

@@ -1,0 +1,486 @@
+/*Order CSS - Daire Pettway*/
+
+* {
+    box-sizing: border-box;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+
+html {
+    text-decoration: none;
+}
+
+header {
+    background-color: #f2f2f2;
+    width: 100%;
+}
+
+section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-image: url("images/galaxy-background.png");
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    display: block;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.Body-info {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.App-logo {
+    height: 20vmin;
+    pointer-events: none;
+}
+
+h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 0;
+    margin-bottom: -0.25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+}
+
+h2 {
+    font-family: "Archivo Black", sans-serif;
+    font-weight: normal;
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 0;
+    margin-bottom: -0.25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width: 605px;
+}
+
+h3,
+h4,
+caption {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
+.gradient-text {
+    background-color: #ca4246;
+    background-image: linear-gradient(45deg,
+        #ca4246 16.666%,
+        #e16541 16.666%,
+        #e16541 33.333%,
+        #f18f43 33.333%,
+        #f18f43 50%,
+        #8b9862 50%,
+        #8b9862 66.666%,
+        #476098 66.666%,
+        #476098 83.333%,
+        #a7489b 83.333%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
+}
+
+.gradient-text:hover {
+    animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+.order-button {
+    background-color: teal;
+    color: pink;
+    border: 1px solid white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.responsive {
+  /*  width: 100%;*/
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    min-height: 20vh;
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #333;
+    width: 100%;
+
+}
+
+.container {
+    display: inline-block;
+    flex-direction: row;
+}
+
+.Row {
+    display: inline-table;
+    width: 100%;
+    /*Optional*/
+    table-layout: fixed;
+    /*Optional*/
+    border-spacing: 10px;
+    /*Optional*/
+    text-align: center;
+}
+
+.Column {
+    display: table-cell;
+    text-align: center;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+
+    40% {
+        background-size: 650%;
+    }
+
+    100% {
+        background-size: 100%;
+    }
+}
+
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+
+    80% {
+        background-size: 650%;
+    }
+
+    100% {
+        background-size: 650%;
+    }
+}
+
+form {
+    width: 300px;
+    border-collapse: collapse;
+    background-color: pink;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+    &>input {
+        flex: 1 1 10ch;
+        margin: .5rem;
+
+        &[type="email"] {
+            flex: 3 1 30ch;
+        }
+    }
+
+}
+
+input {
+    border: none;
+    background: hsl(0 0% 93%);
+    border-radius: .25rem;
+    padding: .75rem 1rem;
+
+}
+}
+
+.formbg {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th,
+td {
+    border: 3px solid black;
+    padding: 10px;
+    background-color: #fff;
+
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul.float {
+    overflow: auto;
+}
+
+li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+ul.float>li {
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.centered>ul.float>li {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+ul.float.even>li {
+    width: 20%;
+}
+
+/* unvisited link */
+a:link {
+    color: purple;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: fuchsia;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: teal;
+    text-decoration: none;
+}
+
+/* selected link */
+a:active {
+    color: yellow;
+    text-decoration: none;
+}
+
+.footer-info {
+    background-color: #282c34;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+footer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* For tablets: */
+    .col-s-1 {
+        width: 8.33%;
+    }
+
+    .col-s-2 {
+        width: 16.66%;
+    }
+
+    .col-s-3 {
+        width: 25%;
+    }
+
+    .col-s-4 {
+        width: 33.33%;
+    }
+
+    .col-s-5 {
+        width: 41.66%;
+    }
+
+    .col-s-6 {
+        width: 50%;
+    }
+
+    .col-s-7 {
+        width: 58.33%;
+    }
+
+    .col-s-8 {
+        width: 66.66%;
+    }
+
+    .col-s-9 {
+        width: 75%;
+    }
+
+    .col-s-10 {
+        width: 83.33%;
+    }
+
+    .col-s-11 {
+        width: 91.66%;
+    }
+
+    .col-s-12 {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+    .col-1 {
+        width: 8.33%;
+    }
+
+    .col-2 {
+        width: 16.66%;
+    }
+
+    .col-3 {
+        width: 25%;
+    }
+
+    .col-4 {
+        width: 33.33%;
+    }
+
+    .col-5 {
+        width: 41.66%;
+    }
+
+    .col-6 {
+        width: 50%;
+    }
+
+    .col-7 {
+        width: 58.33%;
+    }
+
+    .col-8 {
+        width: 66.66%;
+    }
+
+    .col-9 {
+        width: 75%;
+    }
+
+    .col-10 {
+        width: 83.33%;
+    }
+
+    .col-11 {
+        width: 91.66%;
+    }
+
+    .col-12 {
+        width: 100%;
+    }
+}

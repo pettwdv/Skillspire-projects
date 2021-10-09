@@ -1,0 +1,207 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Guess That Number | Daire Pettway</title>
+    <style> 
+        html { 
+            font-family: Open Sans, Helvetica, Arial, sans-serif;
+            } 
+            
+        body { 
+        background-color: lightpink;
+        width: 50%; 
+        max-width: 800px; 
+        min-width: 480px; 
+        margin: 0 auto; 
+       } 
+       h2 {
+        text-shadow: 4px 4px salmon;
+        transition: text-shadow 0.2s ease-in-out;
+       }
+      input[type=button], input[type=submit] {
+         background-color: purple;
+         border: none;
+         border-radius: 8px;
+         color: white;
+         padding: 10px 10px;
+         text-decoration: none;
+         margin: 4px 2px;
+         cursor: pointer;
+      }
+
+
+      .intro{
+        display: flex;           
+       flex-direction: column;   
+       flex-wrap: wrap; 
+       vertical-align: top;
+       position: absolute;
+       margin-top: 20px;
+       padding-top: 60px;
+       width: 75%;
+      } 
+     .score-board{
+       /*background:indigo;*/
+       float: left;
+       display: flex;           
+       flex-direction: column;  
+       flex-wrap: wrap; 
+       vertical-align: top;
+       position: absolute;
+       margin-top: 20px;
+       right: 0;
+       /*padding: 10px;*/
+       /*color: white;*/
+      /* border-radius: 8px;*/
+       width: 15%;
+       text-align: center;
+      }
+      .score-text{
+       /*background:indigo;*/
+       float: left;
+       display: flex;           
+       flex-direction: column;  
+       flex-wrap: wrap; 
+       vertical-align: top;
+       position: absolute;
+       margin-top: 70px;
+       right: 50px;
+       /*padding: 10px;*/
+       color: red;
+      /* border-radius: 8px;*/
+       width: 15%;
+       text-align: center;
+      }
+
+@media screen and (max-width: 500px) { 
+  
+  .score-board, 
+  .intro { 
+      width: 100%; 
+  } 
+} 
+.content-wrap {
+	position: relative;
+	padding: 80px 0;
+	
+}
+.pacman {
+      width: 0px;
+      height: 0px;
+      border-right: 60px solid transparent;
+      border-top: 60px solid yellow;
+      border-left: 60px solid yellow;
+      border-bottom: 60px solid yellow;
+      border-top-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+/*.hexagon {
+  width: 100px;
+  height: 100px;
+  background: indigo;
+  position: relative;
+margin-top:60px;
+}
+.hexagon::before {
+  content: "";
+  position: absolute;
+  top: -28.8675px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 28.8675px solid indigo;
+}
+.hexagon::after {
+  content: "";
+  position: absolute;
+  bottom: -28.8675px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 28.8675px solid indigo;
+}*/
+  
+    </style> 
+</head>
+<body>
+<div class="container clearfix">
+<div class="row clearfix">
+<!-- Intro & Instructions -->
+<div class="col-lg-10 center bottommargin">
+      <div class="intro">
+  <h2> Welcome to Guess The Number</h2>
+  <h4>I have selected a random number between 1 and 10. </br>Let's see if you can guess it.</h4>
+  <h4 id="belowInstructions"></h4>
+  <div id="input">
+      <label> Enter a guess: </label>
+      <input id="submitGuess" type="number">
+     <button onclick="compareNumber()">Submit Guess</button> 
+  </div> 
+</div>
+</div>
+
+   <!--  ScoreBoard -->
+   <div class="row">
+<div class="col-lg-10 center bottommargin">
+  <div class="score-board pacman"></div>
+   
+</div>
+ <h4 class="score-text" id= "score">Your score is: 0 </h4>
+</div>
+</div>
+</div>
+
+<script>
+// random value generated 
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber);
+
+// instructions
+let text = document.getElementById("belowInstructions");
+// score
+let userScoreText = document.getElementById("score"); 
+
+// count number of correct guesses
+let score = 0;
+
+
+//function counts guesses
+function compareNumber() {
+// number guessed by user 
+let number = document.getElementById("submitGuess").value;
+console.log(text);
+console.log(number);
+    if (randomNumber < number){
+    
+        text.innerText = "Sorry, your number is too high. Guess again.";
+        text.style.color ="red";    
+        
+        }else if(randomNumber > number){
+           
+            text.innerText = "Sorry, your number is too low. Guess again.";
+            text.style.color ="orangered"; 
+    
+        }else if (randomNumber == number){
+            text.innerText = "Congratulations! You guessed the correct number. Play Again?";
+            text.style.color ="green"; 
+            console.log ("reset the random number to ", randomNumber = Math.floor(Math.random() * 10) + 1);
+            // add one to the score
+            score+=1; 
+            userScoreText.innerHTML = "Your score is: " + score;
+    }
+}
+
+
+
+</script>
+</body>  
+</html> 
